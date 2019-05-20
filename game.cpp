@@ -31,10 +31,10 @@ void Game::gameLoop() {
 	SDL_Event event;
 
 	// Instance player object
-	this->_player = Player(graphics, 360, 360);
+	this->_player = Player(graphics, 320, 320);
 
 	// Test block
-	this->_block = Block(graphics, 400, 400);
+	this->_block = Block(graphics, 416, 416);
 	
 
 	// Todo: make a moveble block
@@ -136,7 +136,9 @@ void Game::update(float elapsedTime) {
 	if ((others = this->_block.checkTileCollision(this->_player.getBoundingBox())).size() > 0) {
 		//Player collided with at least one tile. Handle it.
 		this->_player.handleTileCollisions(others);
-		this->_block.handleTileCollisions(others);
+
+
+		this->_block.handleTileCollisions(this->_player.getBoundingBox());
 	}
 
 	// single collision version Check collisions

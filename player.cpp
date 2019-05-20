@@ -32,26 +32,26 @@ void Player::setupAnimations() {
 void Player::animationDone(std::string currentAnimation) {}
 
 void Player::moveLeft() {
-	this->_dx = -player_constants::WALK_SPEED;
+	this->_x -= this->_boundingBox.getWidth();
 	this->playAnimation("RunLeft");
 	this->_facing = LEFT;
 }
 
 void Player::moveRight() {
-	this->_dx = player_constants::WALK_SPEED;
+	this->_x += this-> _boundingBox.getWidth();
 	//this->_dx = this->_boundingBox.getWidth();
 	this->playAnimation("RunRight");
 	this->_facing = RIGHT;
 }
 
 void Player::moveUp() {
-	this->_dy = -player_constants::WALK_SPEED;
+	this->_y -= this->_boundingBox.getHeight();
 	this->playAnimation("RunUp");
 	this->_facing = UP;
 }
 
 void Player::moveDown() {
-	this->_dy = player_constants::WALK_SPEED;
+	this->_y += this->_boundingBox.getHeight();
 	this->playAnimation("RunDown");
 	this->_facing = DOWN;
 }
@@ -125,10 +125,10 @@ void Player::update(float elapsedTime) {
 		this->_x = this->_x + this->_dx;
 	}*/
 	
-	this->_x += this->_dx * elapsedTime;
+	//this->_x += this->_dx * elapsedTime;
 
 	//Move by dy
-	this->_y += this->_dy*elapsedTime;
+	//this->_y += this->_dy*elapsedTime;
 
 	AnimatedSprite::update(elapsedTime);
 }

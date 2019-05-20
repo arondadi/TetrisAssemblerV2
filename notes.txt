@@ -2,11 +2,14 @@
 # To do
 ==========================================
 
+- SKOÐA CHECK COLLISION OG HANDLECOLLISION
+	- handle collision gerist 32p frá block
+
 - Implement a block
 	- DONE Draw the sprite block with animatedsprite(without animations)
 	- DONE Add collision with player
 	- Implement movable on block
-		- make function to determine at which direction the collision was
+		- DONE make function to determine at which direction the collision was
 		- touched 
 		- pushed
 		- grid/pixel based movement
@@ -15,7 +18,7 @@
 			- maybe have to draw block again
 
 
-- Change player movement to pixel based movement 
+- DONE Change player movement to pixel based movement 
 
 
 ===========================================

@@ -43,9 +43,9 @@ const Rectangle Sprite::getBoundingBox() const {
 
 //Side getCollisionSide
 //Determine which side the sollision happened on
-const sides::Side Sprite::getCollisionSide(Rectangle &other) const {
-	int amtRight, amtLeft, amtTop, amtBottom;
+const sides::Side Sprite::getCollisionSide(const Rectangle &other) const {
 
+	int amtRight, amtLeft, amtTop, amtBottom;
 	amtRight = this->getBoundingBox().getRight() - other.getLeft();
 	amtLeft = other.getRight() - this->getBoundingBox().getLeft();
 	amtTop = other.getBottom() - this->getBoundingBox().getTop();
@@ -65,4 +65,5 @@ const sides::Side Sprite::getCollisionSide(Rectangle &other) const {
 		lowest == abs(amtTop) ? sides::TOP :
 		lowest == abs(amtBottom) ? sides::BOTTOM :
 		sides::NONE;
+
 }

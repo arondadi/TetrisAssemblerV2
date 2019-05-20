@@ -22,7 +22,7 @@ public:
 	void draw(Graphics &graphics, int x, int y);
 
 	const Rectangle getBoundingBox() const;
-	const sides::Side getCollisionSide(Rectangle &other) const;
+	const sides::Side getCollisionSide(const Rectangle &other) const;
 
 protected:
 	SDL_Rect _sourceRect;

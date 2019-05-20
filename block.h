@@ -27,7 +27,8 @@ public:
 	
 	// Vector version of collisionRect
 	std::vector<Rectangle> checkTileCollision(const Rectangle &other);
-	void handleTileCollisions(std::vector<Rectangle> &other);
+
+	void handleTileCollisions(const Rectangle &player);
 
 	// Check single collision
 	//const Rectangle checkTileCollision(const Rectangle &other);

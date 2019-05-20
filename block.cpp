@@ -21,11 +21,11 @@ void Block::animationDone(std::string currentAnimation) {};
 
 
 void Block::moveDown() {
-	this->_y = this->_y - this->_boundingBox.getHeight();
+	this->_y = this->_y + this->_boundingBox.getHeight();
 }
 
 void Block::moveUp() {
-	this->_y = this->_y + this->_boundingBox.getHeight();
+	this->_y = this->_y - this->_boundingBox.getHeight();
 }
 
 void Block::moveRight() {
@@ -68,22 +68,25 @@ std::vector<Rectangle> Block::checkTileCollision(const Rectangle &other) {
 		this->_boundingBox.getHeight()
 	));
 
-	for (int i = 0; i < this->_collisionRects.size(); i++) {
+	//for (int i = 0; i < this->_collisionRects.size(); i++) {
+	for (int i = 0; i < 1; i++) {
 		if (this->_collisionRects.at(i).collidesWith(other)) {
 			others.push_back(this->_collisionRects.at(i));
 		}
 	}
+
+	this->_collisionRects.pop_back();
 
 	return others;
 }
 
 //void handleTileCollisions
 //Handls collisions with ALL tiles the player is colliding with
-void Block::handleTileCollisions(std::vector<Rectangle> &others) {
+void Block::handleTileCollisions(const Rectangle &player) {
 	//Figure out what side the collision happend on and move the player accordingly
 	//for (int i = 0; i < others.size(); i++) {
 	int i = 0;
-		sides::Side collisionSide = Sprite::getCollisionSide(others.at(i));
+		sides::Side collisionSide = Sprite::getCollisionSide(player);
 		if (collisionSide != sides::NONE) {
 			switch (collisionSide) {
 			case sides::TOP:

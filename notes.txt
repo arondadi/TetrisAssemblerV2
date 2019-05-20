@@ -1,0 +1,37 @@
+==========================================
+# To do
+==========================================
+
+- Implement a block
+	- DONE Draw the sprite block with animatedsprite(without animations)
+	- DONE Add collision with player
+	- Implement movable on block
+		- make function to determine at which direction the collision was
+		- touched 
+		- pushed
+		- grid/pixel based movement
+		- Comments:
+			- position of block is still from push postion and up to new position
+			- maybe have to draw block again
+
+
+- Change player movement to pixel based movement 
+
+
+===========================================
+# Ideas
+===========================================
+- Tetris in same window
+	- Unassembled blocks explode
+	- Non-tetromino shapes do something...
+- Tetris in an another window with assembly in another
+
+
+
+==========================================
+# Done
+==========================================
+
+- Gera part 10 í Cavestory Clone: collision og annað
+- Implement a block
+	- Draw the sprite block with animatedsprite(without animations)

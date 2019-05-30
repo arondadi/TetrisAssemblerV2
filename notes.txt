@@ -5,6 +5,15 @@
 - SKOÐA CHECK COLLISION OG HANDLECOLLISION
 	- handle collision gerist 32p frá block
 
+- Create a level or collision class that keeps track of every piece on the board 
+	- checks collisions
+	- checks possible movements for player/tetramino
+	- checks if player can move block
+
+
+
+- Implement falling on block
+
 - Implement a block
 	- DONE Draw the sprite block with animatedsprite(without animations)
 	- DONE Add collision with player
@@ -18,7 +27,7 @@
 			- maybe have to draw block again
 
 
-- DONE Change player movement to pixel based movement 
+
 
 
 ===========================================
@@ -27,6 +36,9 @@
 - Tetris in same window
 	- Unassembled blocks explode
 	- Non-tetromino shapes do something...
+		- Grey out a line
+		- Can be blow away
+	- Fully assembled tetrominos can be moved by player
 - Tetris in an another window with assembly in another
 
 
@@ -38,3 +50,5 @@
 - Gera part 10 í Cavestory Clone: collision og annað
 - Implement a block
 	- Draw the sprite block with animatedsprite(without animations)
+- Remove animation on player for now
+- DONE Change player movement to pixel based movement 

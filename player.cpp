@@ -23,8 +23,8 @@ Player::Player(Graphics &graphics, float x, float y) :
 void Player::setupAnimations() {
 	this->addAnimation(1, 0, 0, "IdleLeft", 16, 16, Vector2(0, 0));
 	this->addAnimation(1, 0, 16, "IdleRight", 16, 16, Vector2(0, 0));
-	this->addAnimation(3, 0, 0, "RunLeft", 16, 16, Vector2(0, 0));
-	this->addAnimation(3, 0, 16, "RunRight", 16, 16, Vector2(0, 0));
+	this->addAnimation(1, 0, 0, "RunLeft", 16, 16, Vector2(0, 0));  // Change first input to 3 for animation
+	this->addAnimation(1, 0, 16, "RunRight", 16, 16, Vector2(0, 0)); // Change first input to 3 for animation
 	this->addAnimation(1, 112, 0, "RunUp", 16, 16, Vector2(0, 0));
 	this->addAnimation(1, 96, 16, "RunDown", 16, 16, Vector2(0, 0));
 }
@@ -80,16 +80,16 @@ void Player::handleTileCollisions(std::vector<Rectangle> &others) {
 		if (collisionSide != sides::NONE) {
 			switch (collisionSide) {
 			case sides::TOP:
-				this->_y = others.at(i).getBottom() + 1;
+				this->_y = others.at(i).getBottom();
 				break;
 			case sides::BOTTOM:
-				this->_y = others.at(i).getTop() - this->_boundingBox.getHeight() - 1;
+				this->_y = others.at(i).getTop() -this->_boundingBox.getHeight();
 				break;
 			case sides::LEFT:
-				this->_x = others.at(i).getRight() + 1;
+				this->_x = others.at(i).getRight();
 				break;
 			case sides::RIGHT:
-				this->_x = others.at(i).getLeft() - this->_boundingBox.getWidth() - 1;
+				this->_x = others.at(i).getLeft() -this->_boundingBox.getWidth();
 				break;
 			}
 		}

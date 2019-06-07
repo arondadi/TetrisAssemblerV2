@@ -116,14 +116,17 @@ void Game::gameLoop() {
 }
 
 void Game::draw(Graphics &graphics) {
+	// Clear the last frame graphics
 	graphics.clear();
 
+	// Render graphics on the backbuffer
 
 	/*Player is drawn on top of level*/
 	this->_player.draw(graphics);
 
 	this->_block.draw(graphics);
 
+	// Flip the backbuffer graphics forward
 	graphics.flip();
 }
 
